@@ -1,10 +1,15 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { Navbar as NavbarBS, Nav, Button } from 'react-bootstrap';
+import { useCartContext } from '../context/ShoppingCartContext';
+import Cart from './Cart';
 
 export default function Navbar() {
+  const cart = useCartContext();
+
   return (
     <>
+      <Cart />
       <NavbarBS sticky="top">
         <Nav className="me-auto">
           <Nav.Link to={'/'} as={Link}>
@@ -14,6 +19,7 @@ export default function Navbar() {
             Store
           </Nav.Link>
         </Nav>
+
         <Button
           style={{ width: '3rem', height: '3rem', position: 'relative' }}
           className="rounded-circle"
@@ -40,7 +46,7 @@ export default function Navbar() {
               transform: 'translate(25%,25%)',
             }}
           >
-            3
+            {cart.countTotal()}
           </div>
         </Button>
       </NavbarBS>
