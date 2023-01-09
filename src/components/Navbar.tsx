@@ -24,6 +24,7 @@ export default function Navbar() {
           style={{ width: '3rem', height: '3rem', position: 'relative' }}
           className="rounded-circle"
           variant="outline-primary"
+          onClick={cart.toggleCart}
         >
           <svg
             xmlns="http://www.w3.org/2000/svg"
