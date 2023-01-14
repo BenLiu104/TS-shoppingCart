@@ -31,7 +31,7 @@ export default function Cart() {
             })}
           </Stack>
         </Offcanvas.Body>
-        <div>Total: {countTotal()}</div>
+        <div>Total$: {countTotal()}</div>
       </Offcanvas>
     </>
   );

@@ -1,6 +1,5 @@
 import React from 'react';
 import { Row, Col } from 'react-bootstrap';
-import { json } from 'react-router-dom';
 import StoreItem from '../components/StoreItem';
 import burgers from '../data/burgers.json';
 
