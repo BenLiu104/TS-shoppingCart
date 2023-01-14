@@ -3,18 +3,18 @@
     "id": 1,
     "price": 10.99,
     "name": "burger1",
-    "imgURL": "/images/egg-burg.png"
+    "imgURL": "/TS-shoppingCart/images/egg-burg.png"
   },
   {
     "id": 2,
     "price": 11.99,
     "name": "burger2",
-    "imgURL": "/images/burg.png"
+    "imgURL": "/TS-shoppingCart/images/burg.png"
   },
   {
     "id": 3,
     "price": 12.99,
     "name": "burger3",
-    "imgURL": "/images/mush-burg.png"
+    "imgURL": "/TS-shoppingCart/images/mush-burg.png"
   }
 ]

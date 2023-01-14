@@ -12,9 +12,9 @@ function App() {
       <Container>
         <Navbar />
         <Routes>
-          <Route path="/" element={<Home />} />;
-          <Route path="/store" element={<Store />} />;
-          <Route path="/about" element={<About />} />;
+          <Route path="/TS-shoppingCart/" element={<Home />} />;
+          <Route path="/TS-shoppingCart/store" element={<Store />} />;
+          <Route path="/TS-shoppingCart/about" element={<About />} />;
         </Routes>
       </Container>
     </ShoppingCartProvider>

@@ -12,10 +12,10 @@ export default function Navbar() {
       <Cart />
       <NavbarBS sticky="top">
         <Nav className="me-auto">
-          <Nav.Link to={'/'} as={Link}>
+          <Nav.Link to={'/TS-shoppingCart/'} as={Link}>
             Home
           </Nav.Link>
-          <Nav.Link to={'/store'} as={Link}>
+          <Nav.Link to={'/TS-shoppingCart/store'} as={Link}>
             Store
           </Nav.Link>
         </Nav>
