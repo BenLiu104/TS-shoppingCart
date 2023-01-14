@@ -19,7 +19,7 @@ export default function CartItem({ id, quantity }: CartItemPorps) {
           </span>
           <span>{item?.price}</span>
         </div>
-        <div>Total: {item?.price * quantity}</div>
+        <div>Total: {(item?.price || 0) * quantity}</div>
         <div onClick={() => cart.removeItem(id)}>Remove</div>
       </div>
     </>

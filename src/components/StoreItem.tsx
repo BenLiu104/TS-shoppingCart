@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { Button, Card } from 'react-bootstrap';
 import formatCurrency from '../utilities/formatCurrency';
 import { useCartContext } from '../context/ShoppingCartContext';
@@ -8,11 +8,25 @@ interface item {
   price: number;
   imgURL: string;
 }
-
+interface cart {
+  id: number;
+  quantity: number;
+}
 export default function StoreItem({ id, name, price, imgURL }: item) {
+  let record = window.localStorage.getItem('cart');
+  // let cartItem: cart[];
   const cart = useCartContext();
-  const quantity = cart.getItemQuantity(id);
 
+  if (record) {
+    let cartItem = JSON.parse(record);
+  } else {
+    let cartItem = cart.cartItems;
+  }
+
+  const quantity = cart.getItemQuantity(id);
+  useEffect(() => {
+    window.localStorage.setItem('cart', JSON.stringify(cart.cartItems));
+  }, [cart]);
   return (
     <>
       <Card>

@@ -10,7 +10,7 @@ export default function Cart() {
     let total = 0;
     cart.cartItems.forEach((item) => {
       let burger = burgers.find((burger) => burger.id == item.id);
-      total += item.quantity * burger.price;
+      total += item.quantity * (burger?.price || 0);
     });
     return total;
   }

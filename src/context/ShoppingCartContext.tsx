@@ -1,4 +1,6 @@
 import React, { createContext, useContext, ReactNode, useState } from 'react';
+import { useLocalStorage } from '../hooks/useLocalStorage';
+
 interface contextType {
   children: ReactNode;
 }
@@ -25,7 +27,10 @@ export function useCartContext() {
 }
 
 export function ShoppingCartProvider({ children }: contextType) {
-  const [cartItems, setCartItems] = useState<cartItem[]>([]);
+  const [cartItems, setCartItems] = useLocalStorage<cartItem[]>(
+    'shopping-cart',
+    []
+  );
   const [cartIsOpen, setCartOpen] = useState(false);
 
   function getItemQuantity(id: number) {
@@ -62,6 +67,7 @@ export function ShoppingCartProvider({ children }: contextType) {
         });
       }
     });
+    window.localStorage.setItem('cart', JSON.stringify(cartItems));
   }
 
   function removeItem(id: number) {
